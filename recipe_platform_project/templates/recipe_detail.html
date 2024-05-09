@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.title }}</title>
+</head>
+<body>
+    <h1>{{ recipe.title }}</h1>
+    <p>Author: {{ recipe.author }}</p>
+    <h2>Ingredients:</h2>
+    <p>{{ recipe.ingredients }}</p>
+    <h2>Instructions:</h2>
+    <p>{{ recipe.instructions }}</p>
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.user }}: {{ comment.text }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Add a Comment:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Post Comment</button>
+    </form>
+</body>
+</html>

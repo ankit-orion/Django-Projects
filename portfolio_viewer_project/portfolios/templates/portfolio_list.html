@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio List</title>
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        h1 {
+            color: #333;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Portfolio item styles */
+        .portfolio-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        /* Portfolio link styles */
+        .portfolio-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio List</h1>
+    <ul>
+    {% for portfolio in portfolios %}
+        <li class="portfolio-item">{{ portfolio.name }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

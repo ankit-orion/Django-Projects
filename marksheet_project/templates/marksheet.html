@@ -1,0 +1,33 @@
+<!-- marks/templates/marks/marksheet.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet Form</title>
+</head>
+<body>
+    <h1>Marksheet Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_student_name">Student:</label>
+        <select name="student_name" id="id_student_name">
+            {% for student in form.student_name.field.choices %}
+                <option value="{{ student.0 }}">{{ student.1 }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="id_subject_name">Subject:</label>
+        <select name="subject_name" id="id_subject_name">
+            {% for subject in form.subject_name.field.choices %}
+                <option value="{{ subject.0 }}">{{ subject.1 }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="id_marks">Marks:</label>
+        {{ form.marks }}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

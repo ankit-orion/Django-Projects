@@ -1,0 +1,20 @@
+<!-- pizza_order/templates/pizza_order/order_pizza.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'pizza_order/script.js' %}"></script>
+</head>
+<body>
+    <h1>Pizza Order Form</h1>
+    <form id="pizza-order-form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="total-price">Total Price: $0.00</div>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>

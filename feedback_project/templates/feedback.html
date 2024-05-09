@@ -1,0 +1,22 @@
+<!-- feedback_app/templates/feedback_app/feedback.html -->
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <!-- Form fields go here -->
+            {{form.as_p}}
+        </form>
+        <button type="submit">sgyu</button>
+    </div>
+</body>
+</html>

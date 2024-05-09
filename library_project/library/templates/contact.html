@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Contact</title>
+    <link rel="stylesheet" href="{% static 'css/styles_library.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <main class="container">
+        <p>Email: info@library.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+    </main>
+    <footer>
+        <p>Contact us for more information</p>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About Us</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>My Model Data</h1>
+    <ul>
+        {% for item in data %}
+            <li>{{ item.name }} - {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

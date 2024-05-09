@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ blog.name }}</title>
+</head>
+<body>
+    <h1>{{ blog.name }}</h1>
+    <ul>
+    {% for post in posts %}
+        <li>{{ post.title }}</li>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+    </ul>
+</body>
+</html>

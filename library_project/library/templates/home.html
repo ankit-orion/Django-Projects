@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Home</title>
+    <link rel="stylesheet" href="{% static 'css/styles_library.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to our Library!</h1>
+    </header>
+    <main class="container">
+        <h2>Featured Books</h2>
+        <div class="book">
+            <h3>Title: {{ book1.title }}</h3>
+            <p>Author: {{ book1.author }}</p>
+            <p>Genre: {{ book1.genre }}</p>
+        </div>
+        <div class="book">
+            <h3>Title: {{ book2.title }}</h3>
+            <p>Author: {{ book2.author }}</p>
+            <p>Genre: {{ book2.genre }}</p>
+        </div>
+    </main>
+    <footer>
+        <p>Contact us for more information</p>
+        <a href="{% url 'about' %}">About Us</a>
+        <a href="{% url 'contact' %}">Contact Us</a>
+    </footer>
+</body>
+</html>
