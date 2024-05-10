@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Polling Application{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Header content here -->
+        <h1>Polling Application</h1>
+        <nav>
+            <a href="{% url 'polls:list' %}">Home</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'polls:create' %}">Create Poll</a>
+                <a href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'account_login' %}">Login</a>
+                <a href="{% url 'account_signup' %}">Sign Up</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Footer content here -->
+        <p>&copy; 2024 Polling Application</p>
+    </footer>
+</body>
+</html>
